@@ -17,11 +17,26 @@ export default function Layout({ children }) {
   const [displayChildren, setDisplayChildren] = useState(children)
   const [prevPathname, setPrevPathname] = useState(pathname)
   const [transitionStage, setTransitionStage] = useState("end")
+  const [hiddenOverlays, setHiddenOverlays] = useState(true)
+
+  const noneTimeoutRef = useRef()
 
   if (pathname !== prevPathname) {
-    setTransitionStage("start")
     setPrevPathname(pathname)
+
+    setHiddenOverlays(false)
+    noneTimeoutRef.current = setTimeout(() => { setHiddenOverlays(true) }, 1200)
+
+    setTransitionStage("start")
   }
+
+  useEffect(() => {
+    return () => {
+      if (noneTimeoutRef.current) {
+        clearTimeout(noneTimeoutRef.current)
+      }
+    }
+  }, [])
 
   return (
     <div className={styles.container}>
@@ -49,6 +64,7 @@ export default function Layout({ children }) {
           [styles['firstTransOverlay-start']]: transitionStage === "start",
           [styles['firstTransOverlay-middle']]: transitionStage === "middle",
           [styles['firstTransOverlay-end']]: transitionStage === "end",
+          [styles.hidden]: hiddenOverlays,
         })}
       />
       <div
@@ -57,6 +73,7 @@ export default function Layout({ children }) {
           [styles['secondTransOverlay-start']]: transitionStage === "start",
           [styles['secondTransOverlay-middle']]: transitionStage === "middle",
           [styles['secondTransOverlay-end']]: transitionStage === "end",
+          [styles.hidden]: hiddenOverlays,
         })}
       />
       <div
@@ -65,6 +82,7 @@ export default function Layout({ children }) {
           [styles['lastTransOverlay-start']]: transitionStage === "start",
           [styles['lastTransOverlay-middle']]: transitionStage === "middle",
           [styles['lastTransOverlay-end']]: transitionStage === "end",
+          [styles.hidden]: hiddenOverlays,
         })}
         onTransitionEnd={() => {
           if (transitionStage === "start") {
