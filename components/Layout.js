@@ -10,7 +10,8 @@ import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import styles from '../styles/Layout.module.css'
 
-export default function Layout({ children }) {
+// todo disable animation, if there is user configuration
+export default function AnimatedLayout({ children }) {
   const router = useRouter()
   const pathname = router.pathname
 
@@ -19,24 +20,27 @@ export default function Layout({ children }) {
   const [transitionStage, setTransitionStage] = useState("end")
   const [hiddenOverlays, setHiddenOverlays] = useState(true)
 
-  const noneTimeoutRef = useRef()
-
-  if (pathname !== prevPathname) {
-    setPrevPathname(pathname)
-
-    setHiddenOverlays(false)
-    noneTimeoutRef.current = setTimeout(() => { setHiddenOverlays(true) }, 1200)
-
-    setTransitionStage("start")
-  }
-
   useEffect(() => {
+    let hiddenTimeout
+    if (pathname !== prevPathname) {
+      setPrevPathname(pathname)
+
+      setTransitionStage("start")
+
+      setHiddenOverlays(false)
+      hiddenTimeout = setTimeout(() => { setHiddenOverlays(true) }, 1200)
+    }
+
     return () => {
-      if (noneTimeoutRef.current) {
-        clearTimeout(noneTimeoutRef.current)
+      if (hiddenTimeout) {
+        clearTimeout(hiddenTimeout)
       }
     }
-  }, [])
+  }, [pathname, prevPathname])
+
+  if (pathname !== prevPathname && transitionStage === "middle") {
+    setTransitionStage("end")
+  }
 
   return (
     <div className={styles.container}>
@@ -55,7 +59,7 @@ export default function Layout({ children }) {
       </main>
       <div
         className={clsx({
-          [styles.unClickableOverlay]: transitionStage === "start" || transitionStage === "middle"
+          [styles.unClickableOverlay]: transitionStage === "start"
         })}
       />
       <div

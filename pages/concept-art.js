@@ -4,17 +4,16 @@ import styles from '../styles/ConceptArt.module.css'
 
 export default function ConceptArt() {
   return (
-    <div>
+    <div className={styles.page}>
       <Head>
         <meta name="description" content="Michael Yin's Programmer Portfolio Concept Art" />
       </Head>
-      <div className={styles.grid}>
+      <div className={styles.landingScreen}>
         <Link href="/" scroll={false}>
           <a className={styles.card}>
-            <h2>&larr; Back</h2>
+            <h2>&larr; Portfolio</h2>
           </a>
         </Link>
-        Concept ART!
       </div>
     </div>
   )
