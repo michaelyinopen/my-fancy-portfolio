@@ -24,7 +24,7 @@ export default function Layout({ children }) {
   }
 
   return (
-    <div className={''/*styles.container*/}>
+    <div className={styles.container}>
       <Head>
         <title> Michael Yin - Programmer </title>
         <meta name="description" content="Michael Yin's Programmer Portfolio" />
@@ -36,13 +36,29 @@ export default function Layout({ children }) {
           [styles['main-end']]: transitionStage === "middle" || transitionStage === "end",
         })}
       >
-
         {displayChildren}
       </main>
-      {/* <div
-        className={styles.firstTransOverlay}
-
-      /> */}
+      <div
+        className={clsx({
+          [styles.unClickableOverlay]: transitionStage === "start" || transitionStage === "middle"
+        })}
+      />
+      <div
+        className={clsx({
+          [styles.firstTransOverlay]: true,
+          [styles['firstTransOverlay-start']]: transitionStage === "start",
+          [styles['firstTransOverlay-middle']]: transitionStage === "middle",
+          [styles['firstTransOverlay-end']]: transitionStage === "end",
+        })}
+      />
+      <div
+        className={clsx({
+          [styles.secondTransOverlay]: true,
+          [styles['secondTransOverlay-start']]: transitionStage === "start",
+          [styles['secondTransOverlay-middle']]: transitionStage === "middle",
+          [styles['secondTransOverlay-end']]: transitionStage === "end",
+        })}
+      />
       <div
         className={clsx({
           [styles.lastTransOverlay]: true,

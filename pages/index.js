@@ -32,7 +32,7 @@ export default function Home() {
           </a>
         </Link>
 
-        <Link href="/" scroll={false}>
+        <Link href="/">
           <a className={styles.card}>
             <h2>Home &rarr;</h2>
             <p>Navigate to current page.</p>
