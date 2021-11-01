@@ -12,20 +12,31 @@
   z-index: 1;
 }
 
+.card:hover, .card:focus, .card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+}
+
 .page {
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "sky sky" "seaSurface seaSurface" "seaShallow seaDeep" "seaBed seaBed";
 }
 
-.portion {
-  flex: 1 0;
+.sky {
+  grid-area: sky;
   overflow: hidden;
   position: relative;
 }
 
-.sky {
+.skyContent {
   height: 30vh;
   width: 30vw;
   background: radial-gradient(circle at 61.8% 100px, #fffff7 5%, #0ee1f1 40%);
@@ -34,11 +45,42 @@
   right: 0;
 }
 
-.card:hover, .card:focus, .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.seaSurface {
+  grid-area: seaSurface;
+  background: linear-gradient(#0ee1f1, #dbfafc);
 }
 
-.card h2 {
-  font-size: 1.5rem;
+.seaShallow {
+  grid-area: seaShallow;
+  background: linear-gradient(#00b8ff, #005cff);
+}
+
+.seaDeep {
+  grid-area: seaDeep;
+  background: linear-gradient(#00b8ff, #005cff);
+}
+
+.seaBed {
+  grid-area: seaBed;
+  background: linear-gradient(#005cff, #0019ff);
+  overflow: hidden;
+  position: relative;
+}
+
+.seaBedRock {
+  clip-path: polygon(0% 50%, 5% 55%, 14% 49%, 19% 53%, 29% 48%, 31% 53%, 40% 48%, 47% 52%, 53% 50%, 56% 51%, 61% 54%, 67% 50%, 70% 49%, 78% 46%, 85% 53%, 88% 49%, 94% 50%, 100% 52%, 100% 100%, 0% 100%);
+  background: #664207;
+  position: absolute;
+  bottom: 0;
+  height: 60%;
+  width: 100%;
+}
+
+.seaBedRock2 {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 45%, 94% 50%, 88% 44%, 85% 48%, 78% 43%, 70% 48%, 67% 43%, 61% 47%, 56% 45%, 53% 46%, 47% 49%, 40% 45%, 31% 44%, 29% 41%, 19% 48%, 14% 44%, 5% 45%, 0% 47%);
+  background: #462d05;
+  position: absolute;
+  bottom: 0;
+  height: 45%;
+  width: 100%;
 }

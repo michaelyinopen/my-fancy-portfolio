@@ -14,13 +14,16 @@ export default function ConceptArt() {
         </a>
       </Link>
       <div className={styles.page}>
-        <div className={styles.portion}>
-          <div className={styles.sky} />
+        <div className={styles.sky}>
+          <div className={styles.skyContent} />
         </div>
-        <div className={styles['sea-surface']} />
-        <div className={styles['shallow-sea']} />
-        <div className={styles['deep-sea']} />
-        <div className={styles['seabed']} />
+        <div className={styles.seaSurface} />
+        <div className={styles.seaShallow} />
+        <div className={styles.seaDeep} />
+        <div className={styles.seaBed}>
+          <div className={styles.seaBedRock} />
+          <div className={styles.seaBedRock2} />
+        </div>
       </div>
     </div>
   )
