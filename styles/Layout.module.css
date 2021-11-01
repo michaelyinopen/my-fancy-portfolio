@@ -40,6 +40,7 @@
 
 .firstTransOverlay {
   background-color: #fffff7;
+  box-shadow: 0 0 20px 10px rgb(255 255 247);
   position: fixed;
   top: 0;
   left: 0;
@@ -47,7 +48,7 @@
   height: 100vh;
   z-index: 3;
   pointer-events: none;
-  border-radius: 50px;
+  border-radius: 50px;  
 }
 
 .firstTransOverlay-start {
@@ -68,6 +69,7 @@
 
 .secondTransOverlay {
   background-color: #005cff;
+  box-shadow: 0 0 20px 10px #005cff;
   position: fixed;
   top: 0;
   left: 0;
@@ -96,7 +98,8 @@
 }
 
 .lastTransOverlay {
-  background-color: #0EE1F1;
+  background-color: #0ee1f1;
+  box-shadow: 0 0 20px 10px #0ee1f1;
   position: fixed;
   top: 0;
   left: 0;
