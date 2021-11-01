@@ -21,10 +21,17 @@ export default function Home() {
       </p>
 
       <div className={styles.grid}>
-        <Link href="/concept-art">
+        <Link href="/concept-art" scroll={false}>
           <a className={styles.card}>
             <h2>Concept Art &rarr;</h2>
             <p>Relax and enjoy the view.</p>
+          </a>
+        </Link>
+
+        <Link href="/" scroll={false}>
+          <a className={styles.card}>
+            <h2>Home &rarr;</h2>
+            <p>Navigate to current page.</p>
           </a>
         </Link>
 

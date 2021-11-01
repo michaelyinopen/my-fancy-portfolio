@@ -17,54 +17,68 @@
   z-index: 1;
 }
 
-.mainTransition-exit {
-  opacity: 1;
-}
-
-.mainTransition-exit-active {
+.main-start {
   opacity: 0;
-  transition: opacity 1000ms;
+  transition: opacity 1000ms linear;
 }
 
-.transitionOverlay {
-  background-color: red;
-  position: absolute;
+.main-end {
+  opacity: 1;
+  transition: none;
+}
+
+.firstTransOverlay {
+  display: none;
+  background-color: #fffff7;
+  position: fixed;
   top: 0;
   left: 0;
-  width: calc(100% + 10px);
-  height: 100%;
+  width: calc(100% + 100px);
+  height: 100vh;
   z-index: 2;
   pointer-events: none;
-  border-radius: 10px;
-  border: solid;
+  border-radius: 50px;
+}
+
+.firstTransOverlay-exit {
+  display: none;
+}
+
+.firstTransOverlay-exit-active {
+  display: none;
+}
+
+.firstTransOverlay-enter {
+  display: none;
+}
+
+.firstTransOverlay-enter-active {
+  display: none;
+}
+
+.lastTransOverlay {
+  background-color: #0EE1F1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100%);
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 50px;
+}
+
+.lastTransOverlay-start {
+  transform: translate3d(0, 0, 0);
+  transition: transform 1000ms ease-in;
+}
+
+.lastTransOverlay-middle {
+  transform: translate3d(100%, 0, 0);
+  transition: transform 1000ms ease-out;
+}
+
+.lastTransOverlay-end {
   transform: translate3d(-100%, 0, 0);
-}
-
-.transitionOverlay-enter {
-  opacity: 0;
-  transform: translate3d(0, 0, 0);
-  transition: transform 500ms ease-in;
-  transition-delay: 500ms;
-}
-
-.transitionOverlay-enter-active {
-  opacity: 1;
-  transform: translate3d(calc(100% + 10px), 0, 0);
-}
-
-.transitionOverlay-enter-done {
-  display: none;
-}
-
-.transitionOverlay-exit {
-  transform: translate3d(calc(-100% - 10px), 0, 0);
-  transition: transform 500ms ease-in;
-}
-
-.transitionOverlay-exit-active {
-  transform: translate3d(0, 0, 0);
-}
-
-.transitionOverlay-exit-done {
-  display: none;
+  transition: none;
 }
