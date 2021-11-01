@@ -40,7 +40,7 @@
 
 .firstTransOverlay {
   background-color: #fffff7;
-  box-shadow: 0 0 20px 10px rgb(255 255 247);
+  box-shadow: 0 0 10px 0 #fffff7;
   position: fixed;
   top: 0;
   left: 0;
@@ -48,7 +48,7 @@
   height: 100vh;
   z-index: 3;
   pointer-events: none;
-  border-radius: 50px;  
+  border-radius: 50px;
 }
 
 .firstTransOverlay-start {
@@ -57,19 +57,19 @@
 }
 
 .firstTransOverlay-middle {
-  transform: translate3d(calc(100% - 100px), 0, 0);
+  transform: translate3d(calc(100% - 90px), 0, 0);
   transition: transform 588ms ease-out;
   transition-delay: 12ms;
 }
 
 .firstTransOverlay-end {
-  transform: translate3d(calc(-100%), 0, 0);
+  transform: translate3d(calc(-100% - 10px), 0, 0);
   transition: none;
 }
 
 .secondTransOverlay {
   background-color: #005cff;
-  box-shadow: 0 0 20px 10px #005cff;
+  box-shadow: 0 0 10px 5px #005cff;
   position: fixed;
   top: 0;
   left: 0;
@@ -87,19 +87,19 @@
 }
 
 .secondTransOverlay-middle {
-  transform: translate3d(calc(100% - 60px), 0, 0);
+  transform: translate3d(calc(100% - 45px), 0, 0);
   transition: transform 590ms ease-out;
   transition-delay: 4ms;
 }
 
 .secondTransOverlay-end {
-  transform: translate3d(calc(-100%), 0, 0);
+  transform: translate3d(calc(-100% - 15px), 0, 0);
   transition: none;
 }
 
 .lastTransOverlay {
   background-color: #0ee1f1;
-  box-shadow: 0 0 20px 10px #0ee1f1;
+  box-shadow: 0 0 10px 5px #0ee1f1;
   position: fixed;
   top: 0;
   left: 0;
@@ -117,11 +117,11 @@
 }
 
 .lastTransOverlay-middle {
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(calc(100% + 15px), 0, 0);
   transition: transform 588ms ease-out;
 }
 
 .lastTransOverlay-end {
-  transform: translate3d(-100%, 0, 0);
+  transform: translate3d(calc(-100% - 15px), 0, 0);
   transition: none;
 }
