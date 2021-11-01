@@ -9,7 +9,7 @@ export default function ConceptArt() {
         <meta name="description" content="Michael Yin's Programmer Portfolio Concept Art" />
       </Head>
       <div className={styles.grid}>
-        <Link href="/">
+        <Link href="/" scroll={false}>
           <a className={styles.card}>
             <h2>&larr; Back</h2>
           </a>
