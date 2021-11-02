@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { Check } from '../components/Check'
 
 export default function Home() {
   useEffect(() => {
@@ -14,24 +15,26 @@ export default function Home() {
         <title>Michael Yin - Programmer</title>
         <meta name="description" content="Michael Yin's Programmer Portfolio" />
       </Head>
-      <div className={styles.landingScreen}>
-        <h1 className={styles.title}>
-          Michael Yin
-        </h1>
-        <h2 className={styles.description}>
-          Programmer
-        </h2>
+      <div className={styles.sky}>
+        <div className={styles.skyContent}>
+          <h1 className={styles.title}>
+            Michael Yin
+          </h1>
+          <h2 className={styles.description}>
+            Programmer
+          </h2>
 
-        <ol>
-          <li><p>[]3 years professional experience building web apps</p></li>
-          <li><p>[]Strong React skills</p></li>
-          <li><p>[]Dedicated to produce high quality software solutions</p></li>
-        </ol>
+          <ol className={styles.keyPointList}>
+            <li><div className={styles.keyPoint}><Check /> 3 years professional experience building web apps</div></li>
+            <li><div className={styles.keyPoint}><Check /> Strong React skills</div></li>
+            <li><div className={styles.keyPoint}><Check /> Dedicated to produce high quality software solutions</div></li>
+          </ol>
 
-        <div style={{ fontSize: '4rem' }}>
+        </div>
+        {/* <div style={{ fontSize: '4rem' }}>
           Portfolio<br />
           ↓↓
-        </div>
+        </div> */}
       </div>
 
       <div className={'banner'} style={{ display: 'flex', justifyContent: 'space-evenly', border: '1px solid black', width: '100%' }}>
@@ -52,7 +55,7 @@ export default function Home() {
       </div>
 
       <div className={'seaSurface'} style={{ border: '1px solid black', width: '100%' }}>
-        <div className={'seaSurface-art'} style={{ border: '1px solid red', height: '300px' }}>
+        <div className={'seaSurface-art'} style={{ border: '1px solid red', height: '500px' }}>
 
         </div>
         <div className={'seaSurface-content'} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
@@ -76,7 +79,7 @@ export default function Home() {
 
 
       <div className={'seaShallow'} style={{ border: '1px solid black', width: '100%' }}>
-        <div className={'seaShallow-art'} style={{ border: '1px solid green', height: '300px' }}>
+        <div className={'seaShallow-art'} style={{ border: '1px solid green', height: '500px' }}>
 
         </div>
         <div className={'seaShallow-content'} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
@@ -94,7 +97,7 @@ export default function Home() {
         </div>
       </div>
       <div className={'seaDeep'} style={{ border: '1px solid black', width: '100%' }}>
-        <div className={'seaDeep-art'} style={{ border: '1px solid yellow', height: '300px' }}>
+        <div className={'seaDeep-art'} style={{ border: '1px solid yellow', height: '500px' }}>
 
         </div>
         <div className={'seaDeep-content'} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
@@ -109,8 +112,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className={'seaBed'} style={{ border: '1px solid black', width: '100%', height: '300px' }}>
-        SeaBed
+      <div className={styles.seaBed}>
+        <div className={styles.seaBedRock} />
+        <div className={styles.seaBedRock2} />
       </div>
 
       {/* <div className={styles.grid}>
