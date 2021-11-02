@@ -1,27 +1,9 @@
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
 .title a {
   color: #0070f3;
   text-decoration: none;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
+.title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
 }
 
@@ -31,15 +13,22 @@
   font-size: 4rem;
 }
 
-.title,
-.description {
+.title, .description {
   text-align: center;
 }
 
 .description {
-  margin: 4rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.landingScreen {
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at 61.8% 100px, #fffff7 5%, #0ee1f1 40%);
+  
+  /* remove*/
+  border: 1px solid black;
 }
 
 .code {
@@ -47,8 +36,7 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
@@ -71,9 +59,7 @@
   max-width: 300px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
+.card:hover, .card:focus, .card:active {
   color: #0070f3;
   border-color: #0070f3;
 }
