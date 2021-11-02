@@ -1,12 +1,8 @@
-import { useState } from 'react';
-import styles from '../styles/Check.module.css'
+import { useEffect, useState } from 'react';
+import styles from './Check.module.css'
 
-export const Check = () => {
-  // todo
-  const [checked, setChecked] = useState(false)
-  setTimeout(() => {
-    setChecked(a => !a)
-  }, 1000);
+
+export const Check = ({ visible, delay }) => {
   return (
     <div className={styles.check}>
       <svg className={styles.circleSvg}>
@@ -18,8 +14,9 @@ export const Check = () => {
           stroke="currentColor"
           strokeWidth="2"
           strokeDasharray="120"
-          strokeDashoffset={checked ? 0 : 120}
+          strokeDashoffset={visible ? 0 : 120}
           className={styles.animated}
+          style={{ transitionDelay: visible ? `${delay}ms` : '0s' }}
         />
       </svg>
       <svg
@@ -35,8 +32,9 @@ export const Check = () => {
           d="M4 12 L9 17 L20 6"
           fill="none"
           strokeDasharray="120"
-          strokeDashoffset={checked ? 0 : 120}
+          strokeDashoffset={visible ? 0 : 120}
           className={styles.animated}
+          style={{ transitionDelay: visible ? `${delay}ms` : '0s' }}
         />
         🗸
       </svg>

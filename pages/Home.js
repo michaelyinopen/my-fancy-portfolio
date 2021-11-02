@@ -1,13 +1,19 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { Title } from '../components/Title'
+import { SubTitle } from '../components/SubTitle'
 import { Check } from '../components/Check'
 
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0)
+  }, [])
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    setVisible(true)
   }, [])
   return (
     <>
@@ -17,17 +23,21 @@ export default function Home() {
       </Head>
       <div className={styles.sky}>
         <div className={styles.skyContent}>
-          <h1 className={styles.title}>
-            Michael Yin
-          </h1>
-          <h2 className={styles.description}>
-            Programmer
-          </h2>
+          <Title
+            text="Michael Yin"
+            visible={visible}
+            delay={200}
+          />
+          <SubTitle
+            text="Programmer"
+            visible={visible}
+            delay={1200}
+          />
 
           <ol className={styles.keyPointList}>
-            <li><div className={styles.keyPoint}><Check /> 3 years professional experience building web apps</div></li>
-            <li><div className={styles.keyPoint}><Check /> Strong React skills</div></li>
-            <li><div className={styles.keyPoint}><Check /> Dedicated to produce high quality software solutions</div></li>
+            <li><div className={styles.keyPoint}><Check visible={visible} delay={2300} /> 3 years professional experience building web apps</div></li>
+            <li><div className={styles.keyPoint}><Check visible={visible} delay={3300} /> Strong React skills</div></li>
+            <li><div className={styles.keyPoint}><Check visible={visible} delay={4300} /> Dedicated to produce high quality software solutions</div></li>
           </ol>
 
         </div>
