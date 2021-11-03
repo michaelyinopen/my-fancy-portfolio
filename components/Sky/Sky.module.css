@@ -1,0 +1,27 @@
+.sky {
+  background: radial-gradient(circle at 61.8% 100px, #fffff7 5%, #0ee1f1 40%);
+  display: grid;
+  grid-template: ". . ." 1fr ". skyContent ." auto ". . ." 2fr / 1fr auto 2fr;
+  position: relative;
+}
+
+.skyContent {
+  grid-area: skyContent;
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+}
+
+.keyPointList {
+  list-style-type: none;
+}
+
+.keyPoint {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 8px;
+  margin: 22px 0;
+  border-radius: 16px;
+  background-color: rgb(255 255 255 / 40%);
+  box-shadow: 0 0 5px 5px rgb(255 255 255 / 20%), 0 0 5px 10px rgb(255 255 255 / 20%);
+}

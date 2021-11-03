@@ -3,17 +3,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { Title } from '../components/Title'
-import { SubTitle } from '../components/SubTitle'
-import { Check } from '../components/Check'
+import { Sky } from '../components/Sky'
 
 export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [])
-  const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    setVisible(true)
   }, [])
   return (
     <>
@@ -21,32 +15,9 @@ export default function Home() {
         <title>Michael Yin - Programmer</title>
         <meta name="description" content="Michael Yin's Programmer Portfolio" />
       </Head>
-      <div className={styles.sky}>
-        <div className={styles.skyContent}>
-          <Title
-            text="Michael Yin"
-            visible={visible}
-            delay={200}
-          />
-          <SubTitle
-            text="Programmer"
-            visible={visible}
-            delay={1200}
-          />
 
-          <ol className={styles.keyPointList}>
-            <li><div className={styles.keyPoint}><Check visible={visible} delay={2300} /> 3 years professional experience building web apps</div></li>
-            <li><div className={styles.keyPoint}><Check visible={visible} delay={3300} /> Strong React skills</div></li>
-            <li><div className={styles.keyPoint}><Check visible={visible} delay={4300} /> Dedicated to produce high quality software solutions</div></li>
-          </ol>
-
-        </div>
-        {/* <div style={{ fontSize: '4rem' }}>
-          Portfolio<br />
-          ↓↓
-        </div> */}
-      </div>
-
+      <Sky />
+      
       <div className={'banner'} style={{ display: 'flex', justifyContent: 'space-evenly', border: '1px solid black', width: '100%' }}>
         <h3>Michael Yin</h3>
         <div style={{ width: '200px' }} />
