@@ -21,8 +21,8 @@
   animation: pulse 4s infinite ease-in-out;
 }
 
-.content:hover, .content:focus, .content:active {
-  text-shadow: 0 0 4px #fff;
+.content:hover, .content:focus {
+  filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
 }
 
 .iconsSvg {

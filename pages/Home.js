@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
+import clsx from 'clsx'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Sky } from '../components/Sky'
+import { GithubIcon } from '../components/GithubIcon'
+import { ExternalLinkIcon } from '../components/ExternalLinkIcon'
 import jobShopCollectionPic from '../public/job-shop-collection-home.png'
 import jobShopSchedulerPic from '../public/job-shop-scheduler-demo.png'
 import controlFlowPractisePic from '../public/control-flow-practise.svg'
@@ -70,27 +73,30 @@ export default function Home() {
                 href="https://job-shop-collection.michael-yin.net"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.contentLink}
+                className={styles.contentLinkWithIcon}
               >
                 Live Demo
+                <ExternalLinkIcon />
               </a>
               <br />
               <a
                 href="https://azure.job-shop-collection.michael-yin.net"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.contentLink}
+                className={styles.contentLinkWithIcon}
               >
                 Demo on Azure
+                <ExternalLinkIcon />
               </a>
               <br />
               <a
                 href="https://github.com/michaelyinopen/job-shop-collection-web"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.contentLink}
+                className={styles.contentLinkWithIcon}
               >
                 Source
+                <GithubIcon />
               </a>
             </p>
           </div>
@@ -112,18 +118,20 @@ export default function Home() {
                 href="https://michaelyinopen.github.io/job-shop-scheduler/"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.contentLink}
+                className={styles.contentLinkWithIcon}
               >
                 Live Demo
+                <ExternalLinkIcon />
               </a>
               <br />
               <a
                 href="https://github.com/michaelyinopen/job-shop-scheduler"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.contentLink}
+                className={styles.contentLinkWithIcon}
               >
                 Source
+                <GithubIcon />
               </a>
             </p>
           </div>
@@ -144,24 +152,6 @@ export default function Home() {
               />
             </a>
           </div>
-          {/* <div className={styles.imageContainer}>
-            <a
-              href="https://michaelyinopen.github.io/job-shop-scheduler/"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.contentLink}
-            >
-              <Image
-                src={jobShopSchedulerPic}
-                alt="Job Shop Collection Screen"
-                title="Job Shop Collection Screen"
-                quality='100'
-                layout='fill'
-                objectFit='cover'
-                objectPosition='left top'
-              />
-            </a>
-          </div> */}
         </div>
       </div>
       <div className={styles.seaDeep}>
@@ -196,9 +186,10 @@ export default function Home() {
                 href="https://github.com/michaelyinopen/control-flow-practise"
                 target="_blank"
                 rel="noreferrer"
-                className={styles.contentLink}
+                className={styles.contentLinkWithIcon}
               >
                 Source
+                <GithubIcon />
               </a>
             </p>
           </div>
