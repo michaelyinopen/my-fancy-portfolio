@@ -22,7 +22,7 @@ export default function Home() {
       <Sky />
 
       <div className={'banner'} style={{ display: 'flex', justifyContent: 'space-evenly', border: '1px solid black', width: '100%' }}>
-        <h3>Michael Yin</h3>
+        <h3 style={{ fontSize: '24px' }}>Michael Yin</h3>
         <div style={{ width: '200px' }} />
         <div>
           Portfolio<br />
@@ -43,7 +43,7 @@ export default function Home() {
 
         </div>
         <div className={styles.contentFlexbox}>
-          <div className={styles.seaSurfaceImageContainer}>
+          <div className={styles.imageContainer}>
             <a
               href="https://job-shop-collection.michael-yin.net"
               target="_blank"
@@ -127,12 +127,11 @@ export default function Home() {
               </a>
             </p>
           </div>
-          <div className={styles.seaSurfaceImageContainer}>
+          <div className={styles.imageContainer}>
             <a
               href="https://michaelyinopen.github.io/job-shop-scheduler/"
               target="_blank"
               rel="noreferrer"
-              className={styles.contentLink}
             >
               <Image
                 src={jobShopSchedulerPic}
@@ -145,48 +144,63 @@ export default function Home() {
               />
             </a>
           </div>
+          {/* <div className={styles.imageContainer}>
+            <a
+              href="https://michaelyinopen.github.io/job-shop-scheduler/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.contentLink}
+            >
+              <Image
+                src={jobShopSchedulerPic}
+                alt="Job Shop Collection Screen"
+                title="Job Shop Collection Screen"
+                quality='100'
+                layout='fill'
+                objectFit='cover'
+                objectPosition='left top'
+              />
+            </a>
+          </div> */}
         </div>
       </div>
       <div className={styles.seaDeep}>
         <div className={styles.seaDeepArt}>
 
         </div>
-        <div className={'seaDeep-content'} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-          <div className={styles.contentFlexbox}>
-            <div className={styles.seaSurfaceImageContainer}>
+        <div className={styles.contentFlexbox}>
+          <div className={styles.imageContainer}>
+            <a
+              href="https://github.com/michaelyinopen/control-flow-practise"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                src={controlFlowPractisePic}
+                alt="Control Flow Practise Diagram"
+                title="Control Flow Practise Diagram"
+                quality='100'
+                layout='fill'
+                objectFit='cover'
+                objectPosition='left top'
+              />
+            </a>
+          </div>
+          <div className={styles.contentDescription}>
+            <h2>Control flow practise</h2>
+            <p>
+              An ASP.NET Core project to practise control flow and error handling.
+              <br />
+              <br />
               <a
                 href="https://github.com/michaelyinopen/control-flow-practise"
                 target="_blank"
                 rel="noreferrer"
                 className={styles.contentLink}
               >
-                <Image
-                  src={controlFlowPractisePic}
-                  alt="Control Flow Practise Diagram"
-                  title="Control Flow Practise Diagram"
-                  quality='100'
-                  layout='fill'
-                  objectFit='cover'
-                  objectPosition='left top'
-                />
+                Source
               </a>
-            </div>
-            <div className={styles.contentDescription}>
-              <h2>Control flow practise</h2>
-              <p>
-                An ASP.NET Core project to practise control flow and error handling.
-                <br />
-                <br />
-                <a
-                  href="https://github.com/michaelyinopen/control-flow-practise"
-                  target="_blank"
-                  rel="noreferrer"
-                  className={styles.contentLink}
-                >
-                  Source
-                </a>
-              </p>
-            </div>
+            </p>
           </div>
         </div>
       </div>

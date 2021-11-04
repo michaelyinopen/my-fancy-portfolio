@@ -77,11 +77,16 @@
   align-items: center;
 }
 
-.seaSurfaceImageContainer {
+.imageContainer {
   width: 41.66667vw;
   box-shadow: 0 15px 100px -30px rgb(219, 250, 252);
   position: relative;
   height: 360px;
+  transition: transform 500ms ease-in-out;
+}
+
+.imageContainer:hover, .imageContainer:focus-within, .imageContainer:active {
+  transform: scale(1.02)
 }
 
 .contentDescription {
@@ -107,10 +112,21 @@
   z-index: -1;
 }
 
-.contentLink{
+.contentLink {
   display: inline-block;
   padding: 8px 1em;
   margin: 1px 8px;
+  text-decoration: underline;
+  transition: transform 500ms ease-in-out;
+}
+
+.contentLink:hover, .contentLink:focus, .contentLink:active {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #0ff;
+}
+
+.contentLink:active {
+  outline: 0;
 }
 
 .seaShallow {
