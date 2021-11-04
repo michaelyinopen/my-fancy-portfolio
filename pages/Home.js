@@ -4,6 +4,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Sky } from '../components/Sky'
+import jobShopCollectionPic from '../public/job-shop-collection-home.png'
+import jobShopSchedulerPic from '../public/job-shop-scheduler-demo.png'
+import controlFlowPractisePic from '../public/control-flow-practise.svg'
 
 export default function Home() {
   useEffect(() => {
@@ -17,7 +20,7 @@ export default function Home() {
       </Head>
 
       <Sky />
-      
+
       <div className={'banner'} style={{ display: 'flex', justifyContent: 'space-evenly', border: '1px solid black', width: '100%' }}>
         <h3>Michael Yin</h3>
         <div style={{ width: '200px' }} />
@@ -35,61 +38,155 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={'seaSurface'} style={{ border: '1px solid black', width: '100%' }}>
-        <div className={'seaSurface-art'} style={{ border: '1px solid red', height: '500px' }}>
+      <div className={styles.seaSurface}>
+        <div className={styles.seaSurfaceArt}>
 
         </div>
-        <div className={'seaSurface-content'} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-          <Image src="/vercel.svg" alt="Job Shop Collection Screen" title="Job Shop Collection Screen" width={500} height={500} />
-          <div>
+        <div className={styles.contentFlexbox}>
+          <div className={styles.seaSurfaceImageContainer}>
+            <a
+              href="https://job-shop-collection.michael-yin.net"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                src={jobShopCollectionPic}
+                alt="Job Shop Collection Screen"
+                title="Job Shop Collection Screen"
+                quality='100'
+                layout='fill'
+                objectFit='cover'
+                objectPosition='left top'
+              />
+            </a>
+          </div>
+          <div className={styles.contentDescription}>
             <h2>Job Shop Collection</h2>
             <p>
-              A web app to manage data of the Job Shop Scheduling Problem.<br />
-
-              Live: job-shop-collection.michael-yin.net<br />
-
-              Source: github.com/michaelyinopen/job-shop-collection-web<br />
-
-              Also hosted on Azure: azure.job-shop-collection.michael-yin.net
+              A web app to manage data of the Job Shop Scheduling Problem.
+              <br />
+              <br />
+              <a
+                href="https://job-shop-collection.michael-yin.net"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contentLink}
+              >
+                Live Demo
+              </a>
+              <br />
+              <a
+                href="https://azure.job-shop-collection.michael-yin.net"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contentLink}
+              >
+                Demo on Azure
+              </a>
+              <br />
+              <a
+                href="https://github.com/michaelyinopen/job-shop-collection-web"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contentLink}
+              >
+                Source
+              </a>
             </p>
           </div>
         </div>
       </div>
 
-
-
-
-      <div className={'seaShallow'} style={{ border: '1px solid black', width: '100%' }}>
-        <div className={'seaShallow-art'} style={{ border: '1px solid green', height: '500px' }}>
+      <div className={styles.seaShallow}>
+        <div className={styles.seaShallowArt}>
 
         </div>
-        <div className={'seaShallow-content'} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-          <div>
+        <div className={styles.contentFlexbox}>
+          <div className={styles.contentDescription}>
             <h2>Job Shop Scheduler</h2>
             <p>
-              A drag-and-drop schedule.<br />
-
-              Live: michaelyinopen.github.io/job-shop-scheduler/<br />
-
-              Source: github.com/michaelyinopen/job-shop-scheduler<br />
+              A drag-and-drop schedule.
+              <br />
+              <br />
+              <a
+                href="https://michaelyinopen.github.io/job-shop-scheduler/"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contentLink}
+              >
+                Live Demo
+              </a>
+              <br />
+              <a
+                href="https://github.com/michaelyinopen/job-shop-scheduler"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contentLink}
+              >
+                Source
+              </a>
             </p>
           </div>
-          <Image src="/vercel.svg" alt="Job Shop Scheduler" title="Job Shop Scheduler" width={500} height={500} />
+          <div className={styles.seaSurfaceImageContainer}>
+            <a
+              href="https://michaelyinopen.github.io/job-shop-scheduler/"
+              target="_blank"
+              rel="noreferrer"
+              className={styles.contentLink}
+            >
+              <Image
+                src={jobShopSchedulerPic}
+                alt="Job Shop Scheduler Screen"
+                title="Job Shop Scheduler Screen"
+                quality='100'
+                layout='fill'
+                objectFit='cover'
+                objectPosition='left top'
+              />
+            </a>
+          </div>
         </div>
       </div>
-      <div className={'seaDeep'} style={{ border: '1px solid black', width: '100%' }}>
-        <div className={'seaDeep-art'} style={{ border: '1px solid yellow', height: '500px' }}>
+      <div className={styles.seaDeep}>
+        <div className={styles.seaDeepArt}>
 
         </div>
         <div className={'seaDeep-content'} style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-          <Image src="/vercel.svg" alt="Control flow practise" title="Control flow practise" width={500} height={500} />
-          <div>
-            <h2>Control flow practise</h2>
-            <p>
-              An ASP.NET Core project to practise control flow and error handling.<br />
-
-              Source: github.com/michaelyinopen/control-flow-practise
-            </p>
+          <div className={styles.contentFlexbox}>
+            <div className={styles.seaSurfaceImageContainer}>
+              <a
+                href="https://github.com/michaelyinopen/control-flow-practise"
+                target="_blank"
+                rel="noreferrer"
+                className={styles.contentLink}
+              >
+                <Image
+                  src={controlFlowPractisePic}
+                  alt="Control Flow Practise Diagram"
+                  title="Control Flow Practise Diagram"
+                  quality='100'
+                  layout='fill'
+                  objectFit='cover'
+                  objectPosition='left top'
+                />
+              </a>
+            </div>
+            <div className={styles.contentDescription}>
+              <h2>Control flow practise</h2>
+              <p>
+                An ASP.NET Core project to practise control flow and error handling.
+                <br />
+                <br />
+                <a
+                  href="https://github.com/michaelyinopen/control-flow-practise"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.contentLink}
+                >
+                  Source
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

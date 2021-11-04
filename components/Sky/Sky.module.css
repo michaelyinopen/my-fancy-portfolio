@@ -10,10 +10,13 @@
   display: flex;
   flex-direction: column;
   font-size: 22px;
+  margin: 20px;
 }
 
 .keyPointList {
   list-style-type: none;
+  margin: 1em 20px 1em 30px;
+  padding: 0;
 }
 
 .keyPoint {

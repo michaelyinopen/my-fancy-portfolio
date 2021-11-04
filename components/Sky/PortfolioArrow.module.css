@@ -22,7 +22,7 @@
 }
 
 .content:hover, .content:focus, .content:active {
-  text-shadow: 0 0 5px #fff;
+  text-shadow: 0 0 4px #fff;
 }
 
 .iconsSvg {
