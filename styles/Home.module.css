@@ -9,6 +9,10 @@
   }
 }
 
+.sectionPosition {
+  position: realtive,
+}
+
 .seaSurface {
   background: linear-gradient(#00b8ff, #009aff);
 }

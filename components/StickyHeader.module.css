@@ -1,0 +1,9 @@
+.banner {
+  display: flex;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(15px);
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgb(0, 0, 128, 50%);
+  width: 100%;
+  z-index: 10;
+}
