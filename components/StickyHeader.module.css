@@ -13,6 +13,27 @@
 .homeLink {
   display: flex;
   padding: 0 16px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.homeLink:hover, .homeLink:focus, .homeLink:active {
+  color: #0019ff;
+  transform: scale(1.05);
+}
+
+@supports selector(focus-visible) {
+  .homeLink:focus {
+    color: unset;
+    transform: scale(1);
+  }
+  .homeLink:hover {
+    color: #0019ff;
+    transform: scale(1.05);
+  }
+  .homeLink:focus-visible {
+    color: #0019ff;
+    transform: scale(1.05);
+  }
 }
 
 .homeLink h3 {
