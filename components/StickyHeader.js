@@ -44,8 +44,7 @@ const Header = ({
       >
         <h3>Michael Yin</h3>
       </a>
-      <div style={{ width: '200px' }} />
-      <div>
+      <div className={styles.portfolioLinks}>
         <b>Portfolio</b><br />
         <a
           href='#job-shop-collection'
@@ -94,7 +93,6 @@ const Header = ({
         <br />
       </div>
 
-      <div style={{ width: '200px' }} />
       <div className={styles.rightSideLinks}>
         <div>
           <Link href="/concept-art" scroll={false}>
