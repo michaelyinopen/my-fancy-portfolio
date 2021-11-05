@@ -6,4 +6,32 @@
   border-bottom: 1px solid rgb(0, 0, 128, 50%);
   width: 100%;
   z-index: 10;
+  align-items: stretch;
+  transition: opacity 0.4s;
+}
+
+.homeLink {
+  display: flex;
+  padding: 0 16px;
+}
+
+.homeLink h3 {
+  font-size: 24px;
+  align-self: center;
+}
+
+.rightSideLinks {
+  align-self: center;
+}
+
+.rightSideLinks a {
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: underline;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.rightSideLinks a:hover, .rightSideLinks a:focus, .rightSideLinks a:active {
+  color: #0019ff;
+  transform: scale(1.05);
 }

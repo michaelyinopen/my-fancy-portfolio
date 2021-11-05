@@ -20,16 +20,18 @@ const Header = ({
   const controlFlowPractiseRef = useControlFlowPractiseRef()
 
   return (
-    <div className={styles.banner}
+    <div
+      className={styles.banner}
       style={{
-        height: headerHeightPx,
-        position: fixed ? 'fixed' : 'absolute',
-        top: fixed ? 0 : 'auto',
+        minheight: headerHeightPx,
+        position: visible ? 'fixed' : 'absolute',
+        top: visible ? 0 : 'auto',
         opacity: visible ? 1 : 0
       }}
     >
       <a
         href='#'
+        className={styles.homeLink}
         onClick={(e) => {
           if (landingRef.current) {
             e.preventDefault()
@@ -40,11 +42,11 @@ const Header = ({
           }
         }}
       >
-        <h3 style={{ fontSize: '24px', margin: 0 }}>Michael Yin</h3>
+        <h3>Michael Yin</h3>
       </a>
       <div style={{ width: '200px' }} />
       <div>
-        Portfolio<br />
+        <b>Portfolio</b><br />
         <a
           href='#job-shop-collection'
           onClick={(e) => {
@@ -93,11 +95,30 @@ const Header = ({
       </div>
 
       <div style={{ width: '200px' }} />
-      <div>
-        <Link href="/concept-art" scroll={false}>
-          <a>Concept Art
+      <div className={styles.rightSideLinks}>
+        <div>
+          <Link href="/concept-art" scroll={false}>
+            <a>
+              Concept Art
+            </a>
+          </Link>
+          {' / '}
+          <a
+            href="https://michael-yin.net"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Basic
           </a>
-        </Link> / Basic Portfolio  / <a href='https://github.com/michaelyinopen'>Github</a>
+          {' / '}
+          <a
+            href='https://github.com/michaelyinopen'
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
+        </div>
       </div>
     </div >
   )
@@ -106,7 +127,6 @@ const Header = ({
 export function StickyHeader() {
   const landingRef = useLandingRef();
   const [visible, setVisible] = useState(false);
-  const [fixed, setFixed] = useState(false);
 
   useEffect(() => {
     function update() {
@@ -115,7 +135,6 @@ export function StickyHeader() {
         const { pageYOffset } = window;
         const { offsetTop, offsetHeight } = skyEl;
         const offsetBottom = offsetTop + offsetHeight
-        setFixed(pageYOffset >= offsetBottom);
         setVisible(pageYOffset >= offsetBottom - 80);
       }
     }
@@ -129,5 +148,5 @@ export function StickyHeader() {
     };
   }, [landingRef]);
 
-  return <Header visible={visible} fixed={fixed} />;
+  return <Header visible={visible} />;
 }
