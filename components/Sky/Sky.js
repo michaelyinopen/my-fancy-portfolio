@@ -14,7 +14,7 @@ export const Sky = () => {
   }, [])
 
   return (
-    <div id='sky' className={clsx(homeStyles.skyPage, styles.sky)}>
+    <div id='landing' className={clsx(homeStyles.skyPage, styles.sky)}>
       <div className={styles.skyContent}>
         <Title
           text="Michael Yin"

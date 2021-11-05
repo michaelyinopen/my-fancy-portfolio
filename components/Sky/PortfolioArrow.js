@@ -1,11 +1,27 @@
+import { useLandingRef } from '../../shared/sectionRefHooks'
+import { scrollTo } from '../../shared/scrollTo'
 import styles from './PortfolioArrow.module.css'
 
 export const PortfolioArrow = ({ delay }) => {
+  const landingRef = useLandingRef()
   return (
     <div className={styles.container}>
       <div
         className={styles.content}
         style={{ animationDelay: `${delay}ms` }}
+        onClick={(e) => {
+          console.log('onclick')
+          if (landingRef.current) {
+            e.preventDefault()
+            const { offsetTop, offsetHeight } = landingRef.current;
+            const offsetBottom = offsetTop + offsetHeight
+            scrollTo(offsetBottom)
+            console.log({ offsetBottom })
+            console.log('scrolled')
+          } else {
+            // Follow link natively
+          }
+        }}
       >
         Portfolio
         <svg
@@ -19,7 +35,6 @@ export const PortfolioArrow = ({ delay }) => {
           strokeLinecap="round"
           strokeLinejoin="round"
           style={{ bottom: '20px' }}
-          onClick={() => { }/*scrollToContent*/}
         >
           <polyline points="7 13 12 18 17 13"></polyline>
           <polyline points="7 6 12 11 17 6"></polyline>
