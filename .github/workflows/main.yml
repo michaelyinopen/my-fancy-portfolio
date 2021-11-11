@@ -32,6 +32,9 @@ jobs:
       
     - name: Dump GitHub workspace
       run: echo "$GITHUB_WORKSPACE"
+      
+    - name: Dump local_dir
+      run: echo ${local_dir}
         
 #    - name: Upload
 #      run: |
