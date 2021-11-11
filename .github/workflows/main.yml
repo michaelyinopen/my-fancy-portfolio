@@ -29,16 +29,19 @@ jobs:
     steps:            
     - name: Checkout the repo
       uses: actions/checkout@v1
-
-    - name: Upload
-      run: |
-        mkdir ~/.ssh
-        echo "$remote_key" > ~/.ssh/gh_actions_key
-        chmod 600 ~/.ssh/gh_actions_key
-        rsync -avzr --delete -e "ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no" ${local_dir} ${remote_user}@${remote_host}:${remote_dir}
+      
+    - name: Dump GitHub workspace
+      run: echo "$GITHUB_WORKSPACE"
         
-    - name: npm install
-      run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} "cd ${remote_dir} && npm install"
-
-    - name: Restart
-      run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} 'sudo /usr/bin/systemctl restart my-fancy-portfolio.service'
+#    - name: Upload
+#      run: |
+#        mkdir ~/.ssh
+#        echo "$remote_key" > ~/.ssh/gh_actions_key
+#        chmod 600 ~/.ssh/gh_actions_key
+#        rsync -avzr --delete -e "ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no" ${local_dir} ${remote_user}@${remote_host}:${remote_dir}
+#        
+#    - name: npm install
+#      run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} "cd ${remote_dir} && npm install"
+#
+#    - name: Restart
+#      run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} 'sudo /usr/bin/systemctl restart my-fancy-portfolio.service'
