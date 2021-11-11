@@ -24,7 +24,7 @@ jobs:
         remote_port: ${{ secrets.LINODE_PORT }}
         remote_user: ${{ secrets.LINODE_USER }}
         remote_key: ${{ secrets.LINODE_SSH_PRIVATE_KEY }}
-        local_dir: "/"
+        local_dir: "$GITHUB_WORKSPACE"
         remote_dir: ${{secrets.LINODE_DIRECTORY}}
     steps:            
     - name: Checkout the repo
