@@ -43,5 +43,5 @@ jobs:
     - name: npm install
       run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} "cd ${remote_dir} && export NODE_OPTIONS=--openssl-legacy-provider && npm install && npm run build"
 
-#    - name: Restart
-#      run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} 'sudo /usr/bin/systemctl restart my-fancy-portfolio.service'
+    - name: Restart
+      run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} 'pm2 restart nextjs'
