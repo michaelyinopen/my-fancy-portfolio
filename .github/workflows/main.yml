@@ -40,7 +40,7 @@ jobs:
         chmod 600 ~/.ssh/gh_actions_key
         rsync -avzr --delete -e "ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no" ${local_dir} ${remote_user}@${remote_host}:${remote_dir}
         
-    - name: npm install
+    - name: npm install and build
       run: ssh -p ${remote_port} -i ~/.ssh/gh_actions_key -o StrictHostKeyChecking=no ${remote_user}@${remote_host} "cd ${remote_dir} && export NODE_OPTIONS=--openssl-legacy-provider && npm install && npm run build"
 
     - name: Restart
