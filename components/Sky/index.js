@@ -1,1 +1,1 @@
-export { Sky } from './Sky'
+export { Sky } from './Sky.js'

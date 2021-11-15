@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link'
-import { headerHeightPx } from '../shared/dimensions'
+import { headerHeightPx } from '../shared/dimensions.js'
 import {
   useLandingRef,
   useJobShopCollectionRef,
   useJobShopSchedulerRef,
   useControlFlowPractiseRef,
-} from '../shared/sectionRefHooks'
-import { scrollTo } from '../shared/scrollTo'
+} from '../shared/sectionRefHooks.js'
+import { scrollTo } from '../shared/scrollTo.js'
 import styles from './StickyHeader.module.css'
 
 const Header = ({

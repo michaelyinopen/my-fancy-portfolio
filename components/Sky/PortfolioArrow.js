@@ -1,5 +1,5 @@
-import { useLandingRef } from '../../shared/sectionRefHooks'
-import { scrollTo } from '../../shared/scrollTo'
+import { useLandingRef } from '../../shared/sectionRefHooks.js'
+import { scrollTo } from '../../shared/scrollTo.js'
 import styles from './PortfolioArrow.module.css'
 
 export const PortfolioArrow = ({ delay }) => {
