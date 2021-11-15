@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react'
-import clsx from 'clsx'
 import Head from 'next/head'
-import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { headerHeightPx } from '../shared/dimensions'
@@ -201,27 +198,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className={styles.seaBed}>
         <div className={styles.seaBedRock} />
         <div className={styles.seaBedRock2} />
       </div>
-
-      {/* <div className={styles.grid}>
-        <Link href="/concept-art" scroll={false}>
-          <a className={styles.card}>
-            <h2>Concept Art &rarr;</h2>
-            <p>Relax and enjoy the view.</p>
-          </a>
-        </Link>
-
-        <Link href="/">
-          <a className={styles.card}>
-            <h2>Home &rarr;</h2>
-            <p>Navigate to current page.</p>
-          </a>
-        </Link>
-      </div> */}
     </>
   )
 }

@@ -14,3 +14,115 @@
   position: relative;
   z-index: 1;
 }
+
+.main-start {
+  opacity: 0;
+  transition: opacity 400ms linear;
+}
+
+.main-end {
+  opacity: 1;
+  transition: none;
+}
+
+.unClickableOverlay {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.firstTransOverlay {
+  background-color: #fffff7;
+  box-shadow: 0 0 10px 0 #fffff7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% + 100px);
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 50px;
+}
+
+.firstTransOverlay-start {
+  transform: translate3d(-50px, 0, 0);
+  transition: transform 600ms ease-in;
+}
+
+.firstTransOverlay-intermediate {
+  transform: translate3d(calc(100% - 90px), 0, 0);
+  transition: transform 588ms ease-out;
+  transition-delay: 12ms;
+}
+
+.firstTransOverlay-end {
+  transform: translate3d(calc(-100% - 10px), 0, 0);
+  transition: none;
+}
+
+.secondTransOverlay {
+  background-color: #005cff;
+  box-shadow: 0 0 10px 5px #005cff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% + 60px);
+  height: 100vh;
+  z-index: 4;
+  pointer-events: none;
+  border-radius: 50px;
+}
+
+.secondTransOverlay-start {
+  transform: translate3d(-30px, 0, 0);
+  transition: transform 560ms ease-in;
+  transition-delay: 40ms;
+}
+
+.secondTransOverlay-intermediate {
+  transform: translate3d(calc(100% - 45px), 0, 0);
+  transition: transform 590ms ease-out;
+  transition-delay: 4ms;
+}
+
+.secondTransOverlay-end {
+  transform: translate3d(calc(-100% - 15px), 0, 0);
+  transition: none;
+}
+
+.lastTransOverlay {
+  background-color: #0ee1f1;
+  box-shadow: 0 0 10px 5px #0ee1f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100%);
+  height: 100vh;
+  z-index: 5;
+  pointer-events: none;
+  border-radius: 50px;
+}
+
+.lastTransOverlay-start {
+  transform: translate3d(0, 0, 0);
+  transition: transform 540ms ease-in;
+  transition-delay: 60ms;
+}
+
+.lastTransOverlay-intermediate {
+  transform: translate3d(calc(100% + 15px), 0, 0);
+  transition: transform 588ms ease-out;
+}
+
+.lastTransOverlay-end {
+  transform: translate3d(calc(-100% - 15px), 0, 0);
+  transition: none;
+}

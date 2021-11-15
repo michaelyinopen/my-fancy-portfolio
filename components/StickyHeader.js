@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link'
+import { useState, useEffect } from 'react';
 import { headerHeightPx } from '../shared/dimensions'
 import {
   useLandingRef,
@@ -8,6 +7,7 @@ import {
   useControlFlowPractiseRef,
 } from '../shared/sectionRefHooks'
 import { scrollTo } from '../shared/scrollTo'
+import { useTransitionCallback } from '../shared/transition'
 import styles from './StickyHeader.module.css'
 
 const Header = ({
@@ -18,6 +18,8 @@ const Header = ({
   const jobShopCollectionRef = useJobShopCollectionRef()
   const jobShopSchedulerRef = useJobShopSchedulerRef()
   const controlFlowPractiseRef = useControlFlowPractiseRef()
+
+  const transitionCallback = useTransitionCallback()
 
   return (
     <div
@@ -95,11 +97,22 @@ const Header = ({
 
       <div className={styles.rightSideLinks}>
         <div>
-          <Link href="/concept-art" scroll={false}>
-            <a>
+          {// eslint-disable-next-line @next/next/no-html-link-for-pages
+            <a
+              href="/concept-art"
+              onClick={(e) => {
+                if (transitionCallback) {
+                  e.preventDefault()
+                  transitionCallback('/concept-art', undefined, {
+                    scroll: false
+                  })
+                } else {
+                  // Follow link natively
+                }
+              }}>
               Concept Art
             </a>
-          </Link>
+          }
           {' / '}
           <a
             href="https://michael-yin.net"

@@ -1,18 +1,30 @@
 import Head from 'next/head'
-import Link from 'next/link'
+import { useTransitionCallback } from '../shared/transition'
 import styles from '../styles/ConceptArt.module.css'
 
 export default function ConceptArt() {
+  const transitionCallback = useTransitionCallback()
   return (
     <div>
       <Head>
         <meta name="description" content="Michael Yin's Programmer Portfolio Concept Art" />
       </Head>
-      <Link href="/" scroll={false}>
-        <a className={styles.card}>
+      {// eslint-disable-next-line @next/next/no-html-link-for-pages
+        <a
+          href="/"
+          className={styles.card}
+          onClick={(e) => {
+            if (transitionCallback) {
+              e.preventDefault()
+              transitionCallback('/')
+            } else {
+              // Follow link natively
+            }
+          }}
+        >
           <h2>&larr; Portfolio</h2>
         </a>
-      </Link>
+      }
       <div className={styles.page}>
         <div className={styles.sky}>
           <div className={styles.skyContent} />
@@ -25,6 +37,6 @@ export default function ConceptArt() {
           <div className={styles.seaBedRock2} />
         </div>
       </div>
-    </div>
+    </div >
   )
 }
