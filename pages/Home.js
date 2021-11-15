@@ -46,6 +46,7 @@ export default function Home() {
                   alt="Job Shop Collection Screen"
                   title="Job Shop Collection Screen"
                   quality='100'
+                  priority
                   layout='fill'
                   objectFit='cover'
                   objectPosition='left top'
@@ -141,6 +142,7 @@ export default function Home() {
                   alt="Job Shop Scheduler Screen"
                   title="Job Shop Scheduler Screen"
                   quality='100'
+                  priority
                   layout='fill'
                   objectFit='cover'
                   objectPosition='left top'
@@ -172,6 +174,7 @@ export default function Home() {
                   alt="Control Flow Practise Diagram"
                   title="Control Flow Practise Diagram"
                   quality='100'
+                  priority
                   layout='fill'
                   objectFit='cover'
                   objectPosition='left top'

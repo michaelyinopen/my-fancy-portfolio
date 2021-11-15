@@ -1,12 +1,13 @@
 import '../styles/globals.css'
 
-import Layout from '../components/Layout'
+import { TransitionLayout } from '../shared/transition'
+// import Layout from '../components/Layout'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <TransitionLayout>
       <Component {...pageProps} />
-    </Layout>
+    </TransitionLayout>
   )
 }
 
