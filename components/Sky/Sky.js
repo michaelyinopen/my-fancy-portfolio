@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import clsx from 'clsx'
-import { Title } from './Title'
-import { SubTitle } from './SubTitle'
-import { Check } from './Check'
-import { PortfolioArrow } from './PortfolioArrow'
+import { Title } from './Title.js'
+import { SubTitle } from './SubTitle.js'
+import { Check } from './Check.js'
+import { PortfolioArrow } from './PortfolioArrow.js'
 import homeStyles from '../../styles/Home.module.css'
 import styles from './Sky.module.css'
 
