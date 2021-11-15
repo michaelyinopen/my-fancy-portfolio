@@ -42,7 +42,7 @@ const Header = ({
           }
         }}
       >
-        <h3>Michael Yin</h3>
+        <h2>Michael Yin</h2>
       </a>
       <div className={styles.portfolioLinks}>
         <b>Portfolio</b><br />
