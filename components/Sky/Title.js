@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import styles from './Title.module.css'
+import styles from './Sky.module.css'
 
 export const Title = ({
   text,

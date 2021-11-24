@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-import styles from './Check.module.css'
-
+import styles from './Sky.module.css'
 
 export const Check = ({ visible, delay }) => {
   return (

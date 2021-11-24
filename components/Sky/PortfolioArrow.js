@@ -1,13 +1,13 @@
 import { useLandingRef } from '../../shared/sectionRefHooks'
 import { scrollTo } from '../../shared/scrollTo'
-import styles from './PortfolioArrow.module.css'
+import styles from './Sky.module.css'
 
 export const PortfolioArrow = ({ delay }) => {
   const landingRef = useLandingRef()
   return (
-    <div className={styles.container}>
+    <div className={styles.arrowContainer}>
       <div
-        className={styles.content}
+        className={styles.arrowContent}
         style={{ animationDelay: `${delay}ms` }}
         onClick={(e) => {
           console.log('onclick')
@@ -25,7 +25,7 @@ export const PortfolioArrow = ({ delay }) => {
       >
         Portfolio
         <svg
-          className={styles.iconsSvg}
+          className={styles.arrowIconsSvg}
           width={40}
           height={40}
           viewBox="0 0 24 24"
@@ -34,7 +34,6 @@ export const PortfolioArrow = ({ delay }) => {
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          style={{ bottom: '20px' }}
         >
           <polyline points="7 13 12 18 17 13"></polyline>
           <polyline points="7 6 12 11 17 6"></polyline>

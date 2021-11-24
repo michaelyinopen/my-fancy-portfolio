@@ -12,7 +12,6 @@ import styles from './StickyHeader.module.css'
 
 const Header = ({
   visible,
-  fixed,
 }) => {
   const landingRef = useLandingRef()
   const jobShopCollectionRef = useJobShopCollectionRef()
