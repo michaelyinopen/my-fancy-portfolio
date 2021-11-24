@@ -14,7 +14,6 @@ export const Sky = () => {
 
   const windowViewport = useWindowViewport()
   const { height } = windowViewport
-  console.log({ height })
 
   return (
     <div
