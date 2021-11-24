@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
-import clsx from 'clsx'
 import { Title } from './Title'
 import { SubTitle } from './SubTitle'
 import { Check } from './Check'
 import { PortfolioArrow } from './PortfolioArrow'
-import homeStyles from '../../styles/Home.module.css'
 import styles from './Sky.module.css'
+import { useWindowViewport } from '../../shared/useWindowViewport'
 
 export const Sky = () => {
   const [visible, setVisible] = useState(false)
@@ -13,8 +12,16 @@ export const Sky = () => {
     setVisible(true)
   }, [])
 
+  const windowViewport = useWindowViewport()
+  const { height } = windowViewport
+  console.log({ height })
+
   return (
-    <div id='landing' className={clsx(homeStyles.skyPage, styles.sky)}>
+    <div
+      id='landing'
+      className={styles.sky}
+      style={{ minHeight: height }}
+    >
       <div className={styles.skyContent}>
         <div className={styles.titlesFlexboxContainer}>
           <div className={styles.titlesLeftSpace} />
