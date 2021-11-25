@@ -1,23 +1,19 @@
-import { useLandingRef } from '../../shared/sectionRefHooks'
+import { useJobShopCollectionRef } from '../../shared/sectionRefHooks'
 import { scrollTo } from '../../shared/scrollTo'
 import styles from './Sky.module.css'
 
 export const PortfolioArrow = ({ delay }) => {
-  const landingRef = useLandingRef()
+  const jobShopCollectionRef = useJobShopCollectionRef()
   return (
     <div className={styles.arrowContainer}>
       <div
         className={styles.arrowContent}
         style={{ animationDelay: `${delay}ms` }}
         onClick={(e) => {
-          console.log('onclick')
-          if (landingRef.current) {
+          if (jobShopCollectionRef.current) {
             e.preventDefault()
-            const { offsetTop, offsetHeight } = landingRef.current;
-            const offsetBottom = offsetTop + offsetHeight
-            scrollTo(offsetBottom)
-            console.log({ offsetBottom })
-            console.log('scrolled')
+            const { offsetTop } = jobShopCollectionRef.current
+            scrollTo(offsetTop)
           } else {
             // Follow link natively
           }
