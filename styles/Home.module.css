@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+.contentFlexbox-reverse {
+  flex-flow: row-reverse;
+}
+
 .imageContainer {
   width: 41.66667vw;
   box-shadow: 0 15px 100px -30px rgb(219, 250, 252);
@@ -45,9 +49,23 @@
   height: 300px;
   margin: 1em 5%;
   padding: 0 1em;
-  background: #00d2ff;
-  border-radius: 1em;
   position: relative;
+}
+
+.contentDescription>h2 {
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .contentDescription>h2 {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .contentDescription>h2 {
+    font-size: 20px;
+  }
 }
 
 .contentDescription::after {
@@ -61,6 +79,10 @@
   left: 0;
   box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 40px #00d2ff, 0 0 100px #00beff;
   z-index: -1;
+}
+
+.beforeLinksSeparator {
+  height: 16px;
 }
 
 .contentLinkWithIcon {
@@ -87,13 +109,61 @@
     transform: scale(1);
     filter: none;
   }
+
   .contentLinkWithIcon:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
   }
+
   .contentLinkWithIcon:focus-visible {
     transform: scale(1.1);
     filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 20px #fff);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .contentFlexbox-reverse {
+    flex-flow: unset;
+  }
+
+  .contentFlexbox {
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
+
+  .contentFlexbox::after {
+    content: "";
+    position: absolute;
+    background: #00d2ff;
+    border-radius: 1em;
+    top: 0;
+    right: 10.6%;
+    bottom: 0;
+    left: 10.6%;
+    box-shadow: 0 0 10px #00d2ff, 0 0 20px #00d2ff, 0 0 40px #00d2ff, 0 0 100px #00beff;
+    z-index: -1;
+  }
+
+  .imageContainer {
+    width: calc(100% - 2em);
+    height: min(360px, 40vh);
+    margin: 0 1em 32px 1em;
+  }
+
+  .contentDescription {
+    align-self: stretch;
+    width: auto;
+    height: auto;
+    margin: 1em 5% 0 5%;
+    padding: 0 1em;
+  }
+
+  .contentDescription::after {
+    content: none;
+  }
+
+  .beforeLinksSeparator {
+    height: 4px;
   }
 }
 

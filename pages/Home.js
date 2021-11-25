@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import clsx from 'clsx'
 import styles from '../styles/Home.module.css'
 import { headerHeightPx } from '../shared/dimensions'
 import { Sky } from '../components/Sky'
@@ -54,8 +55,7 @@ export default function Home() {
               <h2>Job Shop Collection</h2>
               <p>
                 A web app to manage data of the Job Shop Scheduling Problem.
-                <br />
-                <br />
+                <div className={styles.beforeLinksSeparator} />
                 <a
                   href="https://job-shop-collection.michael-yin.net"
                   target="_blank"
@@ -100,13 +100,30 @@ export default function Home() {
           className={styles.sectionPosition}
           style={{ paddingTop: headerHeightPx, marginTop: -headerHeightPx }}
         >
-          <div className={styles.contentFlexbox}>
+          <div className={clsx(styles.contentFlexbox, styles['contentFlexbox-reverse'])}>
+            <div className={styles.imageContainer}>
+              <a
+                href="https://michaelyinopen.github.io/job-shop-scheduler/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src={jobShopSchedulerPic}
+                  alt="Job Shop Scheduler Screen"
+                  title="Job Shop Scheduler Screen"
+                  quality='100'
+                  priority
+                  layout='fill'
+                  objectFit='cover'
+                  objectPosition='left top'
+                />
+              </a>
+            </div>
             <div className={styles.contentDescription}>
               <h2>Job Shop Scheduler</h2>
               <p>
                 A drag-and-drop schedule.
-                <br />
-                <br />
+                <div className={styles.beforeLinksSeparator} />
                 <a
                   href="https://michaelyinopen.github.io/job-shop-scheduler/"
                   target="_blank"
@@ -127,24 +144,6 @@ export default function Home() {
                   <GithubIcon />
                 </a>
               </p>
-            </div>
-            <div className={styles.imageContainer}>
-              <a
-                href="https://michaelyinopen.github.io/job-shop-scheduler/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Image
-                  src={jobShopSchedulerPic}
-                  alt="Job Shop Scheduler Screen"
-                  title="Job Shop Scheduler Screen"
-                  quality='100'
-                  priority
-                  layout='fill'
-                  objectFit='cover'
-                  objectPosition='left top'
-                />
-              </a>
             </div>
           </div>
         </div>
@@ -182,8 +181,7 @@ export default function Home() {
               <h2>Control flow practise</h2>
               <p>
                 An ASP.NET Core project to practise control flow and error handling.
-                <br />
-                <br />
+                <div className={styles.beforeLinksSeparator} />
                 <a
                   href="https://github.com/michaelyinopen/control-flow-practise"
                   target="_blank"
