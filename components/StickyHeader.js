@@ -101,36 +101,42 @@ const Header = ({
       </div>
 
       <div className={styles.rightSideLinks}>
-        {// eslint-disable-next-line @next/next/no-html-link-for-pages
+        <span>
+          {// eslint-disable-next-line @next/next/no-html-link-for-pages
+            <a
+              href="/concept-art"
+              onClick={(e) => {
+                if (transitionCallback) {
+                  e.preventDefault()
+                  transitionCallback('/concept-art', undefined, {
+                    scroll: false
+                  })
+                } else {
+                  // Follow link natively
+                }
+              }}>
+              Concept Art
+            </a>
+          }
+        </span>
+        <span>
           <a
-            href="/concept-art"
-            onClick={(e) => {
-              if (transitionCallback) {
-                e.preventDefault()
-                transitionCallback('/concept-art', undefined, {
-                  scroll: false
-                })
-              } else {
-                // Follow link natively
-              }
-            }}>
-            Concept Art
+            href="https://michael-yin.net"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Basic
           </a>
-        }
-        <a
-          href="https://michael-yin.net"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Basic
-        </a>
-        <a
-          href='https://github.com/michaelyinopen'
-          target="_blank"
-          rel="noreferrer"
-        >
-          Github
-        </a>
+        </span>
+        <span>
+          <a
+            href='https://github.com/michaelyinopen'
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
+        </span>
       </div>
     </div >
   )

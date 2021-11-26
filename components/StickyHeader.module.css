@@ -101,11 +101,11 @@
 
 .rightSideLinks {
   align-self: center;
+  margin-left: 8px;
   margin-right: 8px;
 }
 
 .rightSideLinks a {
-  margin-left: 8px;
   display: inline-block;
   white-space: nowrap;
   text-decoration: underline;
