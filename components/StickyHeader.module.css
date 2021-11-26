@@ -3,15 +3,15 @@
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(180%) blur(15px);
   justify-content: space-around;
+  align-items: center;
   border-bottom: 1px solid rgb(0, 0, 128, 50%);
   width: 100%;
   z-index: 10;
-  align-items: stretch;
   transition: opacity 0.4s;
 }
 
 .homeLink {
-  display: flex;
+  display: block;
   padding: 0 16px;
   transition: color 0.15s ease, transform 0.15s ease;
 }
@@ -26,23 +26,49 @@
     color: unset;
     transform: scale(1);
   }
+
   .homeLink:hover {
     color: #0019ff;
     transform: scale(1.05);
   }
+
   .homeLink:focus-visible {
     color: #0019ff;
     transform: scale(1.05);
   }
 }
 
-.homeLink h3 {
-  font-size: 24px;
-  align-self: center;
+@media only screen and (max-width: 430px) {
+  .homeLink {
+    padding: 0 8px;
+  }
+
+  .homeLink>h2 {
+    font-size: 0;
+  }
+
+  .homeLink>h2:after {
+    visibility: visible;
+    content: "";
+    background-image: url(../public/my-home-link.png);
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .homeLink>h2:after {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .portfolioLinks {
   align-self: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .portfolioLinks a {
@@ -61,10 +87,12 @@
     color: unset;
     transform: scale(1);
   }
+
   .portfolioLinks a:hover {
     color: #0019ff;
     transform: scale(1.05);
   }
+
   .portfolioLinks a:focus-visible {
     color: #0019ff;
     transform: scale(1.05);
@@ -73,9 +101,11 @@
 
 .rightSideLinks {
   align-self: center;
+  margin-right: 8px;
 }
 
 .rightSideLinks a {
+  margin-left: 8px;
   display: inline-block;
   white-space: nowrap;
   text-decoration: underline;
@@ -85,4 +115,24 @@
 .rightSideLinks a:hover, .rightSideLinks a:focus, .rightSideLinks a:active {
   color: #0019ff;
   transform: scale(1.05);
+}
+
+.rightSideLinks>*:not(:last-child)::after {
+  content: "/";
+  display: inline-block;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .rightSideLinks {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .rightSideLinks>*:not(:last-child)::after {
+    content: none;
+  }
 }

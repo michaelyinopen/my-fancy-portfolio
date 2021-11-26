@@ -10,10 +10,30 @@ import { scrollTo } from '../shared/scrollTo'
 import { useTransitionCallback } from '../shared/transition'
 import styles from './StickyHeader.module.css'
 
+const HomeLink = () => {
+  const landingRef = useLandingRef()
+  return (
+    <a
+      href='#'
+      className={styles.homeLink}
+      onClick={(e) => {
+        if (landingRef.current) {
+          e.preventDefault()
+          const { offsetTop } = landingRef.current
+          scrollTo(offsetTop)
+        } else {
+          // Follow link natively
+        }
+      }}
+    >
+      <h2>Michael Yin</h2>
+    </a>
+  )
+}
+
 const Header = ({
   visible,
 }) => {
-  const landingRef = useLandingRef()
   const jobShopCollectionRef = useJobShopCollectionRef()
   const jobShopSchedulerRef = useJobShopSchedulerRef()
   const controlFlowPractiseRef = useControlFlowPractiseRef()
@@ -30,21 +50,7 @@ const Header = ({
         opacity: visible ? 1 : 0
       }}
     >
-      <a
-        href='#'
-        className={styles.homeLink}
-        onClick={(e) => {
-          if (landingRef.current) {
-            e.preventDefault()
-            const { offsetTop } = landingRef.current
-            scrollTo(offsetTop)
-          } else {
-            // Follow link natively
-          }
-        }}
-      >
-        <h2>Michael Yin</h2>
-      </a>
+      <HomeLink />
       <div className={styles.portfolioLinks}>
         <b>Portfolio</b><br />
         <a
@@ -59,7 +65,7 @@ const Header = ({
             }
           }}
         >
-          job-shop-collection
+          Job Shop Collection
         </a>
         <br />
         <a
@@ -74,7 +80,7 @@ const Header = ({
             }
           }}
         >
-          job-shop-scheduler
+          Job Shop Scheduler
         </a>
         <br />
         <a
@@ -89,46 +95,42 @@ const Header = ({
             }
           }}
         >
-          control-flow-practise
+          Control Flow Practise
         </a>
         <br />
       </div>
 
       <div className={styles.rightSideLinks}>
-        <div>
-          {// eslint-disable-next-line @next/next/no-html-link-for-pages
-            <a
-              href="/concept-art"
-              onClick={(e) => {
-                if (transitionCallback) {
-                  e.preventDefault()
-                  transitionCallback('/concept-art', undefined, {
-                    scroll: false
-                  })
-                } else {
-                  // Follow link natively
-                }
-              }}>
-              Concept Art
-            </a>
-          }
-          {' / '}
+        {// eslint-disable-next-line @next/next/no-html-link-for-pages
           <a
-            href="https://michael-yin.net"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Basic
+            href="/concept-art"
+            onClick={(e) => {
+              if (transitionCallback) {
+                e.preventDefault()
+                transitionCallback('/concept-art', undefined, {
+                  scroll: false
+                })
+              } else {
+                // Follow link natively
+              }
+            }}>
+            Concept Art
           </a>
-          {' / '}
-          <a
-            href='https://github.com/michaelyinopen'
-            target="_blank"
-            rel="noreferrer"
-          >
-            Github
-          </a>
-        </div>
+        }
+        <a
+          href="https://michael-yin.net"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Basic
+        </a>
+        <a
+          href='https://github.com/michaelyinopen'
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>
       </div>
     </div >
   )
