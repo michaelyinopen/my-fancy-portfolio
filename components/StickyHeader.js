@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { headerHeightPx } from '../shared/dimensions'
 import {
   useLandingRef,
   useJobShopCollectionRef,
@@ -44,7 +43,6 @@ const Header = ({
     <div
       className={styles.banner}
       style={{
-        minheight: headerHeightPx,
         position: visible ? 'fixed' : 'absolute',
         top: visible ? 0 : 'auto',
         opacity: visible ? 1 : 0

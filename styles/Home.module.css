@@ -6,7 +6,11 @@
 }
 
 .sectionPosition {
-  position: realtive,
+  position: relative;
+  z-index: 1;
+  /*StickyHeader height, set padding-top and margin-top so that link will scroll to correct position*/
+  padding-top: 92px;
+  margin-top: -92px;
 }
 
 .seaSurface {
@@ -122,6 +126,12 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .sectionPosition {
+    /*StickyHeader height minus contentFlexbox marginTop, set padding-top and margin-top so that link will scroll to correct position*/
+    padding-top: 22px;
+    margin-top: -22px;
+  }
+
   .contentFlexbox-reverse {
     flex-flow: unset;
   }
