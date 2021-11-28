@@ -119,7 +119,7 @@ const Header = ({
         </span>
         <span>
           <a
-            href="https://michael-yin.net"
+            href="https://basic.michael-yin.net"
             target="_blank"
             rel="noreferrer"
           >
