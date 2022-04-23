@@ -77,16 +77,6 @@ function SeaSurface() {
               </a>
               <br />
               <a
-                href="https://azure.job-shop-collection.michael-yin.net"
-                target="_blank"
-                rel="noreferrer"
-                className={styles.contentLinkWithIcon}
-              >
-                Demo on Azure
-                <ExternalLinkIcon />
-              </a>
-              <br />
-              <a
                 href="https://github.com/michaelyinopen/job-shop-collection-web"
                 target="_blank"
                 rel="noreferrer"
